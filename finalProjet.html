@@ -13,8 +13,141 @@
             <h4>WEB-115 Section 0002 - Build Your Resume</h4>
         </div>
     </div>
-    
-
+    <div>
+        <form class="input-form">
+            <!-- Personal Information -->
+            <fieldset>
+                <legend class="fieldset-title">Personal Information</legend>
+                <div>
+                    <label>Name: </label>
+                    <input type="text" id="name">
+                </div>
+                <div>
+                    <label>Location (Enter as: City, ST ZIP): </label>
+                    <input type="text" id="location">
+                </div>
+                <div>
+                    <label>Phone Number: </label>
+                    <input type="tel" id="phone">
+                </div>
+                <div>
+                    <label>Email: </label>
+                    <input type="email" id="email">
+                </div>
+            </fieldset>
+            <!-- Summary -->
+            <fieldset>
+                <legend class="fieldset-title">Summary</legend>
+                <div>
+                    <legend>Write a short description about yourself: </legend>
+                </div>
+                <div>
+                    <input type="text" id="summary" size="50">
+                </div>
+            </fieldset>
+            <!-- Experience -->
+            <fieldset>
+                <legend class="fieldset-title">Experience</legend>
+                <!-- Job 1 -->
+                <div>
+                    <legend class="job-title">Employment Experience 1</legend>
+                    <label>Employment Information (Enter as: Position | Company | City, ST): </label>
+                    <input type="text" id="job1" size="50">
+                </div>
+                <div>
+                    <label>Enter Start Date: </label>
+                    <input type="date" id="start1">
+                </div>
+                <div>
+                    <label>Enter End Date (If current position, enter today's date): </label>
+                    <input type="date" id="end1">
+                </div>
+                <div>
+                    <legend>Key points (Enter as: Key point, Key point, Key point): </legend>
+                </div>
+                <div>
+                    <input type="text" id="keypoint1" size="50">
+                </div>
+                <!-- Job 2 -->
+                <div>
+                    <legend class="job-title">Employment Experience 2</legend>
+                    <label>Employment Information (Enter as: Position | Company | City, ST): </label>
+                    <input type="text" id="job2" size="50">
+                </div>
+                <div>
+                    <label>Enter Start Date: </label>
+                    <input type="date" id="start2">
+                </div>
+                <div>
+                    <label>Enter End Date (If current position, enter today's date): </label>
+                    <input type="date" id="end2">
+                </div>
+                <div>
+                    <legend>Key points (Enter as: Key point, Key point, Key point): </legend>
+                </div>
+                <div>
+                    <input type="text" id="keypoint2" size="50">
+                </div>
+                <!-- Job 3 -->
+                <div>
+                    <legend class="job-title">Employment Experience 3</legend>
+                    <label>Employment Information (Enter as: Position | Company | City, ST): </label>
+                    <input type="text" id="job3" size="50">
+                </div>
+                <div>
+                    <label>Enter Start Date: </label>
+                    <input type="date" id="start3">
+                </div>
+                <div>
+                    <label>Enter End Date (If current position, enter today's date): </label>
+                    <input type="date" id="end3">
+                </div>
+                <div>
+                    <legend>Key points (Enter as: Key point, Key point, Key point): </legend>
+                </div>
+                <div>
+                    <input type="text" id="keypoint3" size="50">
+                </div>
+            </fieldset>
+            <!-- Education -->
+            <fieldset>
+                <legend class="fieldset-title">Education</legend>
+                <div>
+                    <label>School Name (Enter as: School Name | City, ST): </label>
+                    <input type="text" id="education1">
+                </div>
+                <div>
+                    <label>Enter Start Date: </label>
+                    <input type="date" id="start4">
+                </div>
+                <div>
+                    <label>Enter Gradutation Date: </label>
+                    <input type="date" id="end4">
+                </div>
+                <div>
+                    <label>Enter degree or certificate: </label>
+                    <input type="text" id="award">
+                </div>
+                <div>
+                    <legend>Key Points (Enter as: Key point, Key point, Key point): </legend>
+                </div>
+                <div>
+                    <input type="text" id="keypoint4" size="50">
+                </div>
+            </fieldset>
+            <!-- Skills -->
+            <fieldset>
+                <legend class="fieldset-title">Skills</legend>
+                <div>
+                    <legend>Enter skills (Enter as: Skill, Skill, Skill): </legend>
+                </div>
+                <div>
+                    <input type="text" id="skills" size="50">
+                </div>
+            </fieldset>
+            <button class="button enter-button" id="enter-button">Build Resume</button>
+        </form>
+    </div>
     <script src="projectJS.js"></script>
 </body>
 
