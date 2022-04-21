@@ -1,0 +1,23 @@
+/*  main color: #0a192f;
+    green color: #64ffda;
+    text color: #a8b2d1;
+    light navy: #233554;  */
+
+html {
+    background-color: #0a192f;
+}
+
+.banner {
+    width: 100%;
+    height: 80px;
+    background-color: #060e1a;
+}
+
+.banner-content {
+    color: #a8b2d1;
+    padding-left: 16px;
+    line-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
