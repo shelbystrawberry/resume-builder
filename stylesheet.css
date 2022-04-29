@@ -3,7 +3,7 @@
     text color: #a8b2d1;
     light navy: #233554;  */
 
-html {
+.color-form {
     background-color: #0a192f;
 }
 
@@ -11,12 +11,8 @@ html {
     width: 100%;
     height: 80px;
     background-color: #060e1a;
-}
-
-.banner-content {
     color: #a8b2d1;
-    padding-left: 16px;
-    line-height: 0;
+    line-height: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,4 +53,42 @@ fieldset {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.intro {
+    background-color: #a8b2d1;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0;
+    color: #233554
+}
+
+
+
+.left {
+    float: left;
+    width: 25%;
+    background-color: #ebecf3;
+    height: calc(100vh - 95px);
+    line-height: 150%;
+}
+
+.regular-content {
+    padding: 10px 35px 0px;
+}
+
+.right {
+    float: right;
+    width: 75%;
+    height: calc(100vh - 95px);
+    line-height: 150%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle {
+    align-self: center;
+    text-align: center;
 }
