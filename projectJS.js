@@ -48,14 +48,14 @@ function myWindow() {
     job2_end = document.getElementById("end2").value;
     job2_end = checkDate(job2_end);
     job2_keypoints = document.getElementById("keypoint2").value;
-    job2_keypoint = job1_keypoints.split(',');
+    job2_keypoint = job2_keypoints.split(',');
 
     job3 = document.getElementById("job3").value;
     job3_start = new Date(document.getElementById("start3").value);
     job3_end = document.getElementById("end3").value;
     job3_end = checkDate(job3_end);
     job3_keypoints = document.getElementById("keypoint3").value;
-    job3_keypoint = job1_keypoints.split(',');
+    job3_keypoint = job3_keypoints.split(',');
 
     // Skills
     skills = document.getElementById("skills").value;
