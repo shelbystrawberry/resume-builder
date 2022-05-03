@@ -2,7 +2,8 @@ document.getElementById("enter-button").addEventListener('click',myWindow)
 
 
 function myWindow() {   
-    flyWindow = window.open('Resume');
+    flyWindow = window.open('about:blank','myPop');
+    // flyWindow = window.open('Resume');
     // Personal Information
     the_name = document.getElementById("name").value;
     the_location = document.getElementById("location").value;
@@ -18,7 +19,8 @@ function myWindow() {
     // Education
     school = document.getElementById("school").value;
     school_start = new Date(document.getElementById("start4").value);
-    school_end = new Date(document.getElementById("end4").value);
+    school_end = document.getElementById("end4").value;
+    
     school_award = document.getElementById("award").value;
     school_keypoints = document.getElementById("keypoint4").value;
     school_keypoint = school_keypoints.split(',');
@@ -46,6 +48,15 @@ function myWindow() {
     skills = document.getElementById("skills").value;
     skill = skills.split(',');
 
+    function checkDate(x) {
+        if (!x) {
+            x = "Present";
+        } else {
+            x = new Date(school_end);
+            x = school_end.toLocaleDateString('en-us', { year:"numeric", month:"short"});
+        }
+        return x;
+    }
     
     flyWindow.document.write("<!DOCTYPE html>");
     flyWindow.document.write("<html>");
@@ -70,7 +81,7 @@ function myWindow() {
     flyWindow.document.write("</p>");
     flyWindow.document.write("<h2>Education</h2>");
     flyWindow.document.write("<p><strong>" + school +"</strong><br>");
-    flyWindow.document.write(school_start.toLocaleDateString() + " to " + school_end.toLocaleDateString() + "<br>");
+    flyWindow.document.write(school_start.toLocaleDateString('en-us', { year:"numeric", month:"short"}) + " - " + school_end + "<br>");
     flyWindow.document.write(school_award + "<br>");
     flyWindow.document.write("Key Points: <br>");
     for (i of school_keypoint) {
@@ -96,12 +107,8 @@ function myWindow() {
     flyWindow.document.write("<h2>Experience</h2>");
     flyWindow.document.write("</div>");
     flyWindow.document.write("<div class=\"regular-content\">");
-    flyWindow.document.write("<h3>Job 1</h3>");
-    flyWindow.document.write("<h4>Employment Information (Enter as: Position | Company | City, ST): </h4>");
-    flyWindow.document.write("<p>Enter Start Date: ");
-    flyWindow.document.write("mm/dd/yyyy");
-    flyWindow.document.write("Enter End Date (If current position, enter today's date): ");
-    flyWindow.document.write("mm/dd/yyyy");
+    flyWindow.document.write("<h3>" + job1 + "</h3>");
+    flyWindow.document.write("<p>" + job1_start + " - " + job1_end);
     flyWindow.document.write("Key points (Enter as: Key point, Key point, Key point):</p>");
     flyWindow.document.write("<h3>Job 2</h3>");
     flyWindow.document.write("<h4>Employment Information (Enter as: Position | Company | City, ST): </h4>");
