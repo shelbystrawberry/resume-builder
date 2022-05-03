@@ -1,9 +1,19 @@
 document.getElementById("enter-button").addEventListener('click',myWindow)
 
-
 function myWindow() {   
-    flyWindow = window.open('about:blank','myPop');
-    // flyWindow = window.open('Resume');
+    flyWindow = window.open('about:blank','Resume');
+
+
+    function checkDate(x) {
+        if (!x) {
+            x = "Present";
+        } else {
+            x = new Date(x);
+            x = x.toLocaleDateString('en-us', { year:"numeric", month:"short"});
+        }
+        return x;
+    }
+
     // Personal Information
     the_name = document.getElementById("name").value;
     the_location = document.getElementById("location").value;
@@ -20,7 +30,7 @@ function myWindow() {
     school = document.getElementById("school").value;
     school_start = new Date(document.getElementById("start4").value);
     school_end = document.getElementById("end4").value;
-    
+    school_end = checkDate(school_end);
     school_award = document.getElementById("award").value;
     school_keypoints = document.getElementById("keypoint4").value;
     school_keypoint = school_keypoints.split(',');
@@ -29,34 +39,27 @@ function myWindow() {
     job1 = document.getElementById("job1").value;
     job1_start = new Date (document.getElementById("start1").value);
     job1_end = document.getElementById("end1").value;
+    job1_end = checkDate(job1_end);
     job1_keypoints = document.getElementById("keypoint1").value;
     job1_keypoint = job1_keypoints.split(',');
 
     job2 = document.getElementById("job2").value;
     job2_start = new Date(document.getElementById("start2").value);
-    job2_end = new Date(document.getElementById("end2").value);
+    job2_end = document.getElementById("end2").value;
+    job2_end = checkDate(job2_end);
     job2_keypoints = document.getElementById("keypoint2").value;
     job2_keypoint = job1_keypoints.split(',');
 
     job3 = document.getElementById("job3").value;
     job3_start = new Date(document.getElementById("start3").value);
-    job3_end = new Date(document.getElementById("end3").value);
+    job3_end = document.getElementById("end3").value;
+    job3_end = checkDate(job3_end);
     job3_keypoints = document.getElementById("keypoint3").value;
     job3_keypoint = job1_keypoints.split(',');
 
     // Skills
     skills = document.getElementById("skills").value;
     skill = skills.split(',');
-
-    function checkDate(x) {
-        if (!x) {
-            x = "Present";
-        } else {
-            x = new Date(school_end);
-            x = school_end.toLocaleDateString('en-us', { year:"numeric", month:"short"});
-        }
-        return x;
-    }
     
     flyWindow.document.write("<!DOCTYPE html>");
     flyWindow.document.write("<html>");
@@ -108,24 +111,26 @@ function myWindow() {
     flyWindow.document.write("</div>");
     flyWindow.document.write("<div class=\"regular-content\">");
     flyWindow.document.write("<h3>" + job1 + "</h3>");
-    flyWindow.document.write("<p>" + job1_start + " - " + job1_end);
-    flyWindow.document.write("Key points (Enter as: Key point, Key point, Key point):</p>");
-    flyWindow.document.write("<h3>Job 2</h3>");
-    flyWindow.document.write("<h4>Employment Information (Enter as: Position | Company | City, ST): </h4>");
-    flyWindow.document.write("<p>Enter Start Date: ");
-    flyWindow.document.write("mm/dd/yyyy");
-    flyWindow.document.write("Enter End Date (If current position, enter today's date): ");
-    flyWindow.document.write("mm/dd/yyyy");
-    flyWindow.document.write("Key points (Enter as: Key point, Key point, Key point):</p>");
-    flyWindow.document.write("<h3>Job 3</h3>");
-    flyWindow.document.write("<h4>Employment Information (Enter as: Position | Company | City, ST): </h4>");
-    flyWindow.document.write("<p>Enter Start Date: ");
-    flyWindow.document.write("mm/dd/yyyy");
-    flyWindow.document.write("Enter End Date (If current position, enter today's date): ");
-    flyWindow.document.write("mm/dd/yyyy");
-    flyWindow.document.write("Key points (Enter as: Key point, Key point, Key point):</p>");
-    flyWindow.document.write("<br>");
-    flyWindow.document.write("<br>");
+    flyWindow.document.write("<p>" + job1_start.toLocaleDateString('en-us', { year:"numeric", month:"short"}) + " - " + job1_end + "<br>");
+    flyWindow.document.write("Key points:<br>");
+    for (i of job1_keypoint) {
+        flyWindow.document.write("&bull; " + i + "<br>");
+    }
+    flyWindow.document.write("</p>");
+    flyWindow.document.write("<h3>" + job2 + "</h3>");
+    flyWindow.document.write("<p>" + job2_start.toLocaleDateString('en-us', { year:"numeric", month:"short"}) + " - " + job2_end + "<br>");
+    flyWindow.document.write("Key points:<br>");
+    for (i of job2_keypoint) {
+        flyWindow.document.write("&bull; " + i + "<br>");
+    }
+    flyWindow.document.write("</p>");
+    flyWindow.document.write("<h3>" + job3 + "</h3>");
+    flyWindow.document.write("<p>" + job3_start.toLocaleDateString('en-us', { year:"numeric", month:"short"}) + " - " + job3_end + "<br>");
+    flyWindow.document.write("Key points:<br>");
+    for (i of job3_keypoint) {
+        flyWindow.document.write("&bull; " + i + "<br>");
+    }
+    flyWindow.document.write("</p>");
     flyWindow.document.write("</div>");
     flyWindow.document.write("<div class=\"subtitle\">");
     flyWindow.document.write("<h2>References</h2>");
